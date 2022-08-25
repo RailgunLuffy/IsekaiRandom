@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isekai Random</title>
+    <link rel="icon" href="{% static 'myapp/images/slime.png' %}" type="imag/x-icon">
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="{% url 'isekai:home' %}"><img src="{% static 'myapp/images/slime.png' %}" alt="logo" class="logo"></a>
+            <nav>
+                <ul id="menuList">
+                    <li><a href="{% url 'isekai:home' %}">Home</a></li>
+                    <li><a href="{% url 'isekai:home' %}">About</a></li>
+                    <li><a href="{% url 'isekai:home' %}">Contact</a></li>
+                    <li><a href="{% url 'isekai:home' %}">Others</a></li>
+                </ul>
+            </nav>
+            <img src="{% static 'myapp/images/menu.png' %}" alt="menu-icon" class="menu-icon" onclick="togglemenu()">
+        </div>
+
+        <div class="row">
+            <div class="col-1">
+                <h2><span style="color: rgb(53, 212, 212);">Isekai</span><br>Random</h2>
+                <h3>Can't decide which isekai anime to watch?</h3>
+                <p>Then this website can help you by generating a random isekai anime!</p>
+                <h4>Fucking Weeb!!!</h4>
+                <button type="button" onclick="letsGo()">Generate<img src="{% static 'myapp/images/arrow.png' %}" alt=""></button>
+            </div>
+            {% block content %}
+            <div class="col-2">
+                <img src="{% static 'myapp/images/cat.png' %}" alt="" class="catgirl">
+                <div class="color-box"></div>
+            </div>
+            {% endblock %}
+        </div>
+
+        <div class="social-links">
+            <img src="{% static 'myapp/images/fb.png' %}" alt="">
+            <img src="{% static 'myapp/images/tw.png' %}" alt="">
+            <img src="{% static 'myapp/images/ig.png' %}" alt="">
+        </div>
+    </div>
+
+    <script>
+        var menuList = document.getElementById("menuList");
+
+        menuList.style.maxHeight = "0px";
+
+        function togglemenu() {
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "130px";
+            }
+            else 
+            {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+
+        function letsGo() {
+            window.location.href = "{% url 'isekai:result' %}";
+        }
+    </script>
+
+</body>
+</html>

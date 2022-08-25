@@ -1,0 +1,13 @@
+{% extends './isekai.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="col-2">
+    <img src="{{ isekai_result.2 }}" alt="" class="result-image">
+    <a href="{{ isekai_result.1 }}"><h1>{{ isekai_result.0 }}</h1></a>
+    <div class="color-box2"></div>
+</div>
+
+{% endblock %}
