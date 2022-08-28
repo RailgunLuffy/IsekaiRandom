@@ -87,6 +87,7 @@ nav ul li a:hover {
     font-size: 16px;
     color: #b7b7b7;
     font-weight: 100;
+    margin: 30px 0;
 }
 
 .col-1 h4 {
@@ -125,7 +126,7 @@ button:hover {
 .col-1::after {
     content: '';
     width: 10px;
-    height: 57%;
+    height: 62%;
     background: linear-gradient(#ff469f, #ff6062);
     position: absolute;
     left: -40px;
@@ -260,7 +261,7 @@ button:hover {
     }
 
     .col-2 .result-image {
-        width: 77%;
+        width: 70%;
     }
 
     .col-2 .catgirl {
@@ -270,7 +271,7 @@ button:hover {
 
     .color-box {
         transform: translateX(75px);
-        width: 70%;
+        width: 65%;
     }
 
     .color-box2 {
@@ -289,6 +290,16 @@ button:hover {
 
     .col-1 h3 {
         font-size: 15px;
+    }
+
+    .col-2 a h1 {
+        font-size: 21px;
+        font-weight: 50;
+        margin-left: 5px;
+    }
+
+    .col-1::after {
+        height: 48%;
     }
 
 }
