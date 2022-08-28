@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <title>Isekai Random</title>
     <link rel="icon" href="{% static 'myapp/images/slime.png' %}" type="imag/x-icon">
     <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
@@ -13,7 +15,8 @@
 <body>
     <div class="container">
         <div class="navbar">
-            <a href="{% url 'isekai:home' %}"><img src="{% static 'myapp/images/slime.png' %}" alt="logo" class="logo"></a>
+            
+            <img src="{% static 'myapp/images/slime.png' %}" alt="logo" class="logo" id="bounce">
             <nav>
                 <ul id="menuList">
                     <li><a href="{% url 'isekai:home' %}">Home</a></li>
@@ -49,6 +52,15 @@
     </div>
 
     <script>
+    $(document).ready(function(){
+        $("#bounce").click(function(){
+            $("#bounce").addClass("gelatine");
+            setTimeout(function() {
+                $('#bounce').removeClass('gelatine');
+            }, 1300);
+        });
+    });
+
         var menuList = document.getElementById("menuList");
 
         menuList.style.maxHeight = "0px";
